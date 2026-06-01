@@ -1,8 +1,7 @@
-﻿namespace Nullforce.Testing.XunitTraitAttributes
+﻿namespace Nullforce.Testing.XunitTraitAttributes;
+
+internal static class TestingConstants
 {
-    internal static class TestingConstants
-    {
-        internal const string AssemblyName = "Nullforce.Testing.XunitTraitAttributes";
-        internal const string Category = "Category";
-   }
+    internal const string AssemblyName = "Nullforce.Testing.XunitTraitAttributes";
+    internal const string Category = "Category";
 }

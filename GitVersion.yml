@@ -1,0 +1,2 @@
+mode: ContinuousDeployment
+legacy-semver-padding: 4

@@ -1,15 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Nullforce</Authors>
-    <Copyright>Copyright 2018 Nullforce</Copyright>
+    <PackageId>Nullforce.Testing.XunitTraitAttributes</PackageId>
     <Version>0.1.0</Version>
+    <Authors>Nullforce</Authors>
+    <Copyright>Copyright 2018-2026 Nullforce</Copyright>
+    <Description>Custom xUnit traits for unit tests, integration test, and other test types.</Description>
+    <Copyright>Copyright 2019-2026 nullforce</Copyright>
+    <RepositoryUrl>https://github.com/nullforce-public/Nullforce.Testing.XunitTraitAttributes</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>xunit testing traits</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="xunit" Version="2.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

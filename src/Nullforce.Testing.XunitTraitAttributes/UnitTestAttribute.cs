@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-namespace Nullforce.Testing.XunitTraitAttributes
-{
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    [TraitDiscoverer(TestingConstants.AssemblyName + "." + nameof(UnitTestDiscoverer), TestingConstants.AssemblyName)]
-    public class UnitTestAttribute : Attribute, ITraitAttribute
-    {
-        public UnitTestAttribute()
-        {
-        }
-    }
+namespace Nullforce.Testing.XunitTraitAttributes;
 
-    public class UnitTestDiscoverer : ITraitDiscoverer
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+[TraitDiscoverer(TestingConstants.AssemblyName + "." + nameof(UnitTestDiscoverer), TestingConstants.AssemblyName)]
+public class UnitTestAttribute : Attribute, ITraitAttribute
+{
+    public UnitTestAttribute()
     {
-        public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo traitAttribute)
-        {
-            yield return new KeyValuePair<string, string>(TestingConstants.Category, TestCategory.UnitTest);
-        }
+    }
+}
+
+public class UnitTestDiscoverer : ITraitDiscoverer
+{
+    public IEnumerable<KeyValuePair<string, string>> GetTraits(IAttributeInfo traitAttribute)
+    {
+        yield return new KeyValuePair<string, string>(TestingConstants.Category, TestCategory.UnitTest);
     }
 }
